@@ -1,22 +1,32 @@
 {
-  "name": "test",
-  "version": "0.0.1",
+  "name": "graphql-pg",
+  "version": "1.0.0",
   "main": "index.js",
+  "repository": "git@github.com:ivgtr/graphql-pg.git",
+  "author": "ivgtr <gear.1112t.o@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "tsc -w",
-    "dev": "nodemon dist"
+    "dev": "run-p dev:client dev:server dev:codegen",
+    "dev:client": "cd ./packages/client && yarn dev",
+    "dev:server": "cd ./packages/server && yarn dev",
+    "dev:codegen": "graphql-codegen --config codegen.yml -w",
+    "lint": "yarn cl:lint && yarn sr:lint",
+    "lint:client": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/client/src",
+    "lint:server": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/server/src",
+    "generate": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.0",
+    "@graphql-codegen/typescript": "^1.20.0",
+    "@graphql-codegen/typescript-operations": "^1.17.13",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "@graphql-codegen/typescript-resolvers": "^1.18.1",
     "@types/node": "^14.14.20",
     "eslint": "^7.17.0",
     "eslint-config-sumikko": "^0.2.1",
-    "nodemon": "^2.0.7",
     "typescript": "^4.1.3"
   },
   "dependencies": {
-    "apollo-server": "^2.19.1",
-    "axios": "^0.21.1",
     "graphql": "^15.4.0"
   }
 }

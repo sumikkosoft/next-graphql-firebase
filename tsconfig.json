@@ -14,18 +14,7 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "rootDir": "./src",
-    "baseUrl": "./",
-    "outDir": "./dist",
     "noEmitOnError": true,
     "resolveJsonModule": true
-  },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "lib",
-    "dist"
-  ]
+  }
 }

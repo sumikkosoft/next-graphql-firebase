@@ -6,14 +6,17 @@
   "author": "ivgtr <gear.1112t.o@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "run-p dev:client dev:server dev:codegen",
+    "dev": "yarn dev:client && yarn dev:server && yarn dev:codegen",
     "dev:client": "cd ./packages/client && yarn dev",
     "dev:server": "cd ./packages/server && yarn dev",
     "dev:codegen": "graphql-codegen --config codegen.yml -w",
+    "build": "yarn build:generate && yarn build:server && yarn build:client",
+    "build:client": "cd ./packages/client && yarn build",
+    "build:server": "cd ./packages/server && yarn build",
+    "build:generate": "graphql-codegen --config codegen.yml",
     "lint": "yarn cl:lint && yarn sr:lint",
     "lint:client": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/client/src",
-    "lint:server": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/server/src",
-    "generate": "graphql-codegen --config codegen.yml"
+    "lint:server": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/server/src"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.0",

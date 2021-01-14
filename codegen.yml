@@ -18,6 +18,7 @@ generates:
       - typescript-operations
       - typescript-react-apollo
     config:
-      withComponent: false
+      skipTypename: false
       withHooks: true
       withHOC: false
+      withComponent: false

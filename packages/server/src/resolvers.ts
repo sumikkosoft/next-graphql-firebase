@@ -5,7 +5,24 @@ const Query: QueryResolvers = {
     return null
   },
   async users() {
-    return null
+    return [
+      {
+        id: '1',
+        name: 'yamada'
+      },
+      {
+        id: '2',
+        name: 'tanaka'
+      },
+      {
+        id: '3',
+        name: 'kikuti'
+      },
+      {
+        id: '4',
+        name: 'yoshida'
+      }
+    ]
   }
 }
 

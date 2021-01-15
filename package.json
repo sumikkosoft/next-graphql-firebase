@@ -16,7 +16,10 @@
     "build:codegen": "graphql-codegen --config codegen.yml",
     "lint": "yarn cl:lint && yarn sr:lint",
     "lint:client": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/client/src",
-    "lint:server": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/server/src"
+    "lint:server": "eslint --fix --ext .jsx,.js,.tsx,.ts ./packages/server/src",
+    "setup": "yarn && run-p setup:client setup:server",
+    "setup:client": "cd ./packages/client && yarn",
+    "setup:server": "cd ./packages/server && yarn"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.0",

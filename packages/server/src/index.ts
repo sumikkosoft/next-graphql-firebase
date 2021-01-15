@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { ApolloServer, gql } from 'apollo-server'
-import { resolvers } from './resolvers'
+import { resolvers } from './utils/resolvers'
 
 const typeDefs = gql(
   fs.readFileSync(path.resolve(__dirname, '../../graphql/schema.graphql'), 'utf8')
